@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Work_Sans } from "next/font/google";
 import "./globals.css";
+import { Room } from "./Room";
 
 const workSans = Work_Sans({
   subsets: ["latin"],
@@ -9,7 +10,7 @@ const workSans = Work_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Liveblocks Figma Clone",
+  title: "Figma Clone",
   description: "A real-time Figma clone built with Liveblocks and Next.js",
 };
 
@@ -20,7 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={workSans.className}>{children}</body>
+      <body className={`${workSans.className} bg-primary-grey-200`}>
+        <Room>{children}</Room>
+      </body>
     </html>
   );
 }
